@@ -1,0 +1,75 @@
+@import '../../shared/vars';
+@import '../../../theme';
+
+$host-padding: 24px;
+$card-min-width: 470px;
+
+:host {
+  width: 100%;
+  padding: $host-padding;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-weight: 300;
+}
+
+.content-row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0 -16px;
+}
+
+.card {
+  $card-margin: 16px;
+
+  flex-grow: 1;
+  flex-shrink: 0;
+  margin: $card-margin;
+  display: flex;
+  flex-direction: column;
+  width: calc(50% - #{$card-margin * 2});
+  min-width: $card-min-width;
+
+  .card-title {
+    font-size: 16px;
+    font-weight: 300;
+    margin: 0;
+    padding: 16px;
+  }
+
+  .card-content {
+    width: 100%;
+  }
+
+  &.purchases-by-source {
+    .card-title {
+      padding-left: 12px;
+      padding-bottom: 0;
+    }
+  }
+
+  &.purchases-by-source, &.purchases-by-device {
+    padding-bottom: 16px;
+  }
+
+  &.purchases-by-device {
+    min-width: initial;
+    width: 30%;
+    max-width: 400px;
+    flex-grow: 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  .card, .card.purchases-by-device, .card.reviews {
+    min-width: calc(100% - #{$host-padding * 2});
+  }
+
+  .card.purchases-by-device {
+    max-width: initial;
+    flex-grow: 1;
+  }
+}

@@ -1,0 +1,37 @@
+<h1 class="title">{{product?.name}}</h1>
+<div class="content-row">
+  <div class="card mat-elevation-z3 purchases-by-source">
+    <h2 class="card-title">Purchases by source</h2>
+    <div class="card-content">
+      <app-line-chart [chartData]="chartsData.purchasesBySource"></app-line-chart>
+    </div>
+  </div>
+</div>
+<div class="content-row">
+  <div class="card mat-elevation-z3 purchases-by-device">
+    <h2 class="card-title">Purchases by device type</h2>
+    <div class="card-content">
+      <app-donut-chart
+        [chartData]="chartsData.purchasesByDevice"
+        [chartColors]="deviceChartColors"
+      ></app-donut-chart>
+    </div>
+  </div>
+  <div class="card mat-elevation-z3 reviews">
+    <h2 class="card-title">Product reviews</h2>
+    <div class="card-content">
+      <app-bar-chart
+        [chartData]="chartsData.reviews"
+        [chartColors]="reviewsChartColors"
+      ></app-bar-chart>
+    </div>
+  </div>
+</div>
+<div class="content-row">
+  <div class="card mat-elevation-z3 purchases-map">
+    <div class="card-content">
+      <app-countries-heatmap [dataByCountry]="chartsData.purchasesByCountry"></app-countries-heatmap>
+    </div>
+  </div>
+</div>
+

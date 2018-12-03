@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Angular dashboard starter</title>
+  <base href="/">
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&amp;subset=cyrillic" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+<script>
+  // let browser cache geojson data for geo chart, geojson file is rather big,
+  // so good to have it in browser cache before user will init the component that needs it
+  var xmlHttp = new XMLHttpRequest();
+  xmlHttp.open("GET", 'https://raw.githubusercontent.com/datasets/geo-countries/master/data/countries.geojson', true);
+  xmlHttp.send(null);
+</script>
+<app-root>Loading...</app-root>
+
+<!-- Google Tag Manager script -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-107852265-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-107852265-3');
+</script>
+<!-- /Google Tag Manager script -->
+
+</body>
+</html>

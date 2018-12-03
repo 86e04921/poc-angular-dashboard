@@ -1,0 +1,39 @@
+<div class="list">
+  <div class="card mat-elevation-z3 new" [routerLink]="['', 'product', 'new']">
+    <svg class="new-icon" fill="#000000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+      <path d="M0 0h24v24H0z" fill="none"/>
+    </svg>
+    <h2 class="new-title">New product</h2>
+  </div>
+  <div class="card mat-elevation-z3" *ngFor="let item of items" [routerLink]="['', 'product', item.id]">
+    <div class="card-image-container">
+      <div
+        class="card-image"
+        [ngStyle]="{'background-image': 'url(' + item.imageUrl + ')'}"
+      ></div>
+    </div>
+    <div class="card-content">
+      <h2 class="card-title">{{item.name}}</h2>
+      <span>${{item.price | number}}</span>
+      <span>Purchased {{item.purchases | number}} times</span>
+      <span>Rating: {{item.rating}}</span>
+    </div>
+    <div class="card-actions">
+      <button
+        class="card-view-button"
+        mat-button
+        color="primary"
+        [routerLink]="['', 'product', item.id]"
+      >VIEW
+      </button>
+      <button
+        class="card-edit-button"
+        mat-button
+        color="primary"
+        [routerLink]="['', 'product', item.id, 'edit']"
+      >EDIT
+      </button>
+    </div>
+  </div>
+</div>

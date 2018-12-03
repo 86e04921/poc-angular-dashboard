@@ -1,0 +1,13 @@
+@import 'shared/vars';
+
+:host {
+  display: flex;
+  flex-grow: 1;
+
+  // c3 line chart has overflowing element for interactions detection
+  overflow-x: hidden;
+
+  &.header-visible {
+    padding-top: $header-height;
+  }
+}
